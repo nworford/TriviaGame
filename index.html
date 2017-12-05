@@ -7,67 +7,43 @@
 	  <title>Vincent Van Gogh Trivia!</title>
 	  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	  <script src="assets/javascript/app.js"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="assets/javascript/app.js"></script>
+
 	</head>
 
 
 	<body>
-		<div id="background">
-		<img id="background-image" src="./assets/images/wheatfield-cypresses.jpg">
-	
 
-		<div id="game_box">
-			<h1 id="header"> Vincent Van Gogh Trivia </h1>
+		<div id="container">
+		
+			<div id="game_box">
+				<h1 id="header"> Vincent Van Gogh Trivia </h1>
 
-			<div id="start_button"> Click here to START</div>
+				<div id="start_button"> Click here to START</div>
 
-			<div id="timer"> Time remaining: </div>
+				<div id="timer"> Time remaining: <span id="timer_sec">30</span></div>
 
-			<div id="question_box"> QUESTION </div>
+				<div id="question_box"> QUESTION <span id="question"> </span> </div>
 
-			<div id="answer_box">
-				<button id="answer_1"></button>
+				<div id="answer_box">
+					<button id="answer_1"> <span id="answer_1_text"></span></button>
 
-				<button id="answer_2"></button>
+					<button id="answer_2"> <span id="answer_2_text"></span></button>
 
-				<button id="answer_3"></button>
+					<button id="answer_3"> <span id="answer_3_text"></span></button>
 
-				<button id="answer_4"></button>
-			</div> <!-- answer_box -->
+					<button id="answer_4"> <span id="answer_4_text"></span></button>
+				</div> <!-- answer_box -->
 
-			<div id="gif_box" src="./assets/images/NatalyaStClairVanGogh1-Fact1.gif"> </div>
-		</div> <!-- game_box -->
-
+				<div id="gif_box" src="./assets/images/NatalyaStClairVanGogh1-Fact1.gif"> 
+					GIF BOX!
+				</div>
+			</div> <!-- game_box -->
 		</div> <!-- "background"--> 
+
 	</body>
 
-		
-	<div id="1">
-		<div id="question_1"> In what country was Vincent Van Gogh born? </div>
-			<div> France </div>
-			<div class="correct_answer"> Netherlands </div>
-			<div> Germany </div>
-			<div> Austria </div>
-
-		<div class="interesting_fact"> Vincent van Gogh was born on March 30, 1853, in Groot-Zundert, Netherlands. He was named after his grandfather and his stillborn brother who died one year before Van Gogh was born. </div>
-
-		<div class="gif_file" src="./assets/images/NatalyaStClairVanGogh1-Fact1.gif"></div>
-
-	</div> <!-- 1 -->
-
-	<div id="2">
-		<div id="question_2"> How old was Van Gogh when he painted his first piece? </div>
-			<div> 8 </div>
-			<div> 16 </div>
-			<div> 22 </div>
-			<div class="correct_answer"> 27 </div>
-
-		<div class="interesting_fact">  </div>
-
-		<div class="gif_file" src="./assets/images/NatalyaStClairVanGogh2-Fact2.gif"></div>
-		
-	</div> <!-- 2 -->
 
 
 	<hr id="bottom-hr">
