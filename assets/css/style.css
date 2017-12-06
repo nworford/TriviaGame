@@ -32,6 +32,7 @@ h1 {
 
 	text-align:center;
 	margin:5px;
+	margin-top:20pxf;
 	margin-left:140px;
 	background-color:blue;
 	font-family:Apple Chancery;
@@ -65,6 +66,7 @@ h1 {
 	background-color:green;
 	margin:20px 10px 10px 10px;
 	padding:10px;
+	padding-top:20px;
 	width:560px;
 	height:100px;
 }
@@ -93,7 +95,7 @@ h1 {
 	font-size:25px;
 	padding-top:30px;
 	width:580px;
-	height:50px;
+	height:100px;
 
 }
 
@@ -124,14 +126,17 @@ h1 {
 }
 
 #result_box {
+	position:border-box;
 	text-align:center;
 	margin:5px;
+	padding:20px;
 	margin-left:10px;
 	background-color:blue;
+	font-color:white;
 	font-family:Times New Roman;
 	font-size:25px;
 	padding-top:20px;
-	width:580px;
+	width:540px;
 	height:250px;
 }
 
@@ -147,8 +152,10 @@ h1 {
 
 
 #gif_box {
-
-	background-color:purple;
+	
+	margin-left:15px;
+	margin-bottom:25px;
+	margin-top:20px;
 	width:500px;
-	height:400px;
+	height:300px;
 }
