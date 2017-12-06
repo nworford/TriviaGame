@@ -1,16 +1,15 @@
-
-
-
-
+var correct = 0;
+var incorrect = 0;
 
 var timer; //the timer object.
 var qNumber = 0; //what quesiton number the user is on
-var questions = ["In what country was Vincent Van Gogh born?", "How old was vg when he painted?"];
-var answer1s = ["France", "8"]
-var answer2s = ["Netherlands", "10"];
-var answer3s = ["Belgium", "12"];
-var answer4s = ["Germany", "27"];
-var correctAns = [2, 4]
+var questions = ["In what country was Vincent Van Gogh born?", "How old was Van Gogh when he painted his first piece?","How much time did Van Gogh spend formally studying art in school?", "What fellow painter did Van Gogh attempt to attack, resulting in his famous ear injury?", "The Starry Night was painted in which country?"];
+var answer1s = ["France", "8", "none", "Paul Gauguin", "Netherlands"];
+var answer2s = ["Netherlands", "10", "a few months", "Henri Matisse", "Denmark"];
+var answer3s = ["Belgium", "12", "One year", "Andre Derain", "France"];
+var answer4s = ["Germany", "27", "Three years", "Maurice de Vlaminck", "Germany"];
+var correctAns = [2, 4, 2, 1, 3];
+var interesting_fact = ["Vincent van Gogh was born on March 30, 1853, in Groot-Zundert, Netherlands. He was named after his grandfather and his stillborn brother who died one year before Van Gogh was born.","Vincent was supposed to follow in his father's footsteps and become a Pastor", "Vincent studied art at the academy of fine art in Antwerp but only remained at the Academy for a few months due to disagreements with his tutors. For example, he thought that he should be in an advanced drawing class but the tutor felt he wasn't skilled enough, and wanted to move him to the preparatory class.", "During one of his seizures, Van Gogh attempted to attack his friend Paul Gauguin with an open razor. This ultimately resulted in Vincent cutting off a piece of his own ear – but not the whole ear as is often rumored. A new study claims Vincent Van Gogh may have made up the story to protect painter Paul Gauguin who actually lopped it off with a sword during an argument.","Van Gogh created his most famous work, “The Starry Night”, while staying in an asylum in Saint-Remy-de-Provence, France."]
 var timeLeft = 30;
 
 
@@ -33,6 +32,7 @@ var update = function() {
 	timeLeft = timeLeft - 1;
 	
 	$('#timer_sec').html(timeLeft);
+
 }
 
 
@@ -40,20 +40,22 @@ $(document).ready(function() {
 	$("#timer").hide();
 	$("#question_box").hide();
 	$("#answer_box").hide();
+	$("#gif_box").hide();
+	$("#result_box").hide();
 
 	//when start button is clicked, start game
 	$('#start_button').click(function() {
 		start_game();
-		var game_finished = false
-		var correct_answers = 0
-		var incorrect_answers = 0
+		var game_finished = false;
+		var correct_answers = 0;
+		var incorrect_answers = 0;
 
 		//set 30 seccond count down
 		window.clearInterval(timer);
 		timer = window.setInterval(update, 1000);
 
 		$('#question_box').html($('#question_1'));
-
+		$("#intro").hide();
 		$("#start_button").hide();
 		$("#timer").show();
 		$("#question_box").show();
@@ -65,16 +67,20 @@ $(document).ready(function() {
 			var nextButton = "#answer_" + i;
 			console.log("Making " + nextButton + " clickable");
 			$(nextButton).click(function(event) {
-				alert("Clicked " + $(event).id);
+				var nextButton = $(this).attr('id');
+				alert("Clicked " + $(this).attr('id'));  
+
+
 			});
 			//when button clicked, what do we do? (depends on button # & current question)
+
 
 			
 		}
 
 
 	});
-});
+})
 
 
 
