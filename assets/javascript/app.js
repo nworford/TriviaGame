@@ -11,13 +11,23 @@ var answer4s = ["Germany", "27", "Three years", "Maurice de Vlaminck", "Germany"
 var correctAns = [2, 4, 2, 1, 3];
 var interesting_fact = ["Vincent van Gogh was born on March 30, 1853, in Groot-Zundert, Netherlands. He was named after his grandfather and his stillborn brother who died one year before Van Gogh was born.","Vincent was supposed to follow in his father's footsteps and become a Pastor", "Vincent studied art at the academy of fine art in Antwerp but only remained at the Academy for a few months due to disagreements with his tutors. For example, he thought that he should be in an advanced drawing class but the tutor felt he wasn't skilled enough, and wanted to move him to the preparatory class.", "During one of his seizures, Van Gogh attempted to attack his friend Paul Gauguin with an open razor. This ultimately resulted in Vincent cutting off a piece of his own ear – but not the whole ear as is often rumored. A new study claims Vincent Van Gogh may have made up the story to protect painter Paul Gauguin who actually lopped it off with a sword during an argument.","Van Gogh created his most famous work, “The Starry Night”, while staying in an asylum in Saint-Remy-de-Provence, France."]
 var timeLeft = 30;
+var gifs = [ "./assets/images/NatalyaStClairVanGogh1-Fact1.gif"]
 
 
-var start_game = function() { 
+var start_game = function(){};
+var game_over = function() { 
+
+	alert("You answered" + correct + " questions correctly");
 
 }
 
+	
 var load_question = function() { 
+
+	if (!questions[qNumber]) {
+		game_over();
+		return;
+	}
 	//pick a random qustion, put it on the screen & whatever
 	$("#question_box").html(questions[qNumber]);
 	$('#answer_1_text').html(answer1s[qNumber]);
@@ -25,13 +35,44 @@ var load_question = function() {
 	$('#answer_3_text').html(answer3s[qNumber]);
 	$('#answer_4_text').html(answer4s[qNumber]);
 
-	qNumber = qNumber + 1;
+	// qNumber = qNumber + 1;
 }
 
 var update = function() {
 	timeLeft = timeLeft - 1;
 	
 	$('#timer_sec').html(timeLeft);
+	if (timeLeft <= 0)
+
+	{
+		$("#gif_box").html("<img src='" + gifs[qNumber] + "'>");
+
+				$("#result_box").text("That's incorrect! " + interesting_fact[qNumber]);
+				$("#gif_box").show();
+
+				$("#result_box").show();
+				$("#timer").hide();
+				$("#question_box").hide();
+				$("#answer_box").hide();
+
+
+			qNumber++;
+				setTimeout(function() {
+					$("#gif_box").hide();
+					$("#result_box").hide();
+
+					timeLeft = 30;
+					update();
+					$("#timer").show();
+					$("#question_box").show();
+					$("#answer_box").show();
+					load_question();
+				}, 5000);
+				incorrect++;
+	}
+		
+
+
 
 }
 
@@ -68,7 +109,49 @@ $(document).ready(function() {
 			console.log("Making " + nextButton + " clickable");
 			$(nextButton).click(function(event) {
 				var nextButton = $(this).attr('id');
-				alert("Clicked " + $(this).attr('id'));  
+				// alert("Clicked " + $(this).attr('id'));  
+
+				console.log( Number(nextButton[nextButton.length - 1]));
+				console.log(correctAns[qNumber]);
+
+			if( Number(nextButton[nextButton.length - 1]) === correctAns[qNumber]) {
+			
+
+				$("#result_box").text("That's correct! " + interesting_fact[qNumber]);
+
+				correct++;
+
+			}
+
+			else{
+
+				$("#result_box").text("That's incorrect! " + interesting_fact[qNumber]);
+				incorrect++;
+			}
+
+				$("#gif_box").html("<img src='" + gifs[qNumber] + "'>");
+				$("#gif_box").show();
+
+				$("#result_box").show();
+				$("#timer").hide();
+				$("#question_box").hide();
+				$("#answer_box").hide();
+
+
+			qNumber++;
+				setTimeout(function() {
+					$("#gif_box").hide();
+					$("#result_box").hide();
+
+					timeLeft = 30;
+
+					update();
+					$("#timer").show();
+					$("#question_box").show();
+					$("#answer_box").show();
+					load_question();
+				}, 5000);
+			
 
 
 			});
@@ -83,73 +166,3 @@ $(document).ready(function() {
 })
 
 
-
-/*
-
-		
-	<div id="q1">
-		<div id="question_1"> In what country was Vincent Van Gogh born? </div>
-			<div> France </div>
-			<div class="correct_answer"> Netherlands </div>
-			<div> Germany </div>
-			<div> Austria </div>
-
-		<div class="interesting_fact"> Vincent van Gogh was born on March 30, 1853, in Groot-Zundert, Netherlands. He was named after his grandfather and his stillborn brother who died one year before Van Gogh was born. </div>
-
-		<div class="gif_file" src="./assets/images/NatalyaStClairVanGogh1-Fact1.gif"></div>
-
-	</div> 
-
-	<!-- 1 -->
-	<div id="q2">
-		<div id="question_2"> How old was Van Gogh when he painted his first piece? </div>
-			<div> 8 </div>
-			<div> 16 </div>
-			<div> 22 </div>
-			<div class="correct_answer"> 27 </div>
-
-		<div class="interesting_fact">  </div>
-
-		<div class="gif_file" src="./assets/images/NatalyaStClairVanGogh2-Fact2.gif"></div>
-	</div> <!-- 2 -->
-
-	<div id="q3">
-		<div id="question_3"> How long did Van Gogh spend formally studying art in school? </div>
-			<div> None </div>
-			<div class="correct_answer"> a few months</div>
-			<div> One year </div>
-			<div > Two years </div>
-
-		<div class="interesting_fact"> Vincent studied art at the academy of fine art in Antwerp but only remained at the Academy for a few months due to disagreements with his tutors. For example, he thought that he should be in an advanced drawing class but the tutor felt he wasn't skilled enough, and wanted to move him to the preparatory class.
-		 </div>
-
-		<div class="gif_file" src="./assets/images/antwerp.jpg"></div>
-	</div> <!-- 3 -->
-
-	<div id="q4">
-		<div id="question_4"> What fellow painter did Van Gogh attempt to attack, resulting in his famous ear injury? </div>
-			<div class="correct_answer"> Paul Gauguin </div>
-			<div> Henri Matisse </div>
-			<div> Paul Cezane </div>
-			<div > Maurice De Vlaminck </div>
-
-		<div class="interesting_fact"> During one of his seizures, Van Gogh attempted to attack his friend Paul Gauguin with an open razor. This ultimately resulted in Vincent cutting off a piece of his own ear – but not the whole ear as is often rumored. A new study claims Vincent Van Gogh may have made up the story to protect painter Paul Gauguin who actually lopped it off with a sword during an argument.
-		 </div>
-
-		<div class="gif_file" src="./assets/images/ear.gif"></div>
-	</div> <!-- 4 -->
-
-	<div id="q5">
-		<div id="question_4"> “The Starry Night” was painted in which country? </div>
-			<div class="correct_answer"> France </div>
-			<div> Austria </div>
-			<div> Belgium </div>
-			<div > Netherlands </div>
-
-		<div class="interesting_fact"> Van Gogh created his most famous work, “The Starry Night”, while staying in an asylum in Saint-Remy-de-Provence, France.
-		 </div>
-
-		<div class="gif_file" src="./assets/images/starrynight.gif"></div>
-	</div> <!-- 5 -->
-
-*/
