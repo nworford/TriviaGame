@@ -5,7 +5,9 @@ h1 {
 }
 
 #header {
-	margin
+	color:#fbc612;
+	margin-bottom:10px;
+
 }
 
 
@@ -13,9 +15,9 @@ h1 {
 	border: 5px white;
 	width:100%;
 	height:100%;
-	margin:20px;
+	margin:0px;
 	padding:0px;
-	background-image: url(../../assets/images/wheatfield-cypresses.jpg);
+	background-image: url(../../assets/images/irises.png);
 	background-size: 100%;
 }
 
@@ -32,9 +34,10 @@ h1 {
 
 	text-align:center;
 	margin:5px;
-	margin-top:20pxf;
+	margin-top:20px;
 	margin-left:140px;
-	background-color:blue;
+	color:#fbc612;
+	background-color:#3e4d61;
 	font-family:Apple Chancery;
 	font-size:25px;
 	padding-top:30px;
@@ -46,7 +49,7 @@ h1 {
 
 	vertical-align: top;
 	margin:5px;
-	background-color:yellow;
+	background-color:#84c38b;
 	width:600px;
 	height:900px;
 	margin:0px;
@@ -61,10 +64,12 @@ h1 {
 
 #intro {
 	font-family:Apple Chancery;
-	font-size:20px;
+	font-size:30px;
+	line-height:1.4em;
 	text-align: center;
-	background-color:green;
-	margin:20px 10px 10px 10px;
+	color:#3e4d61;
+	background-color:#84c38b;
+	margin:20px 10px 20px 10px;
 	padding:10px;
 	padding-top:20px;
 	width:560px;
@@ -76,8 +81,10 @@ h1 {
 	
 	text-align:center;
 	margin:5px;
+	margin-top:40px;
 	margin-left:140px;
-	background-color:blue;
+	color:#fbc612;
+	background-color:#3e4d61;
 	font-family:Apple Chancery;
 	font-size:25px;
 	padding-top:30px;
@@ -90,9 +97,11 @@ h1 {
 	text-align:center;
 	margin:5px;
 	margin-left:10px;
-	background-color:white;
-	font-family:Times New Roman;
-	font-size:25px;
+	color:#3e4d61;
+	background-color:#84c38b;
+	font-family:Apple Chancery;
+	line-height:1.4em;
+	font-size:30px;
 	padding-top:30px;
 	width:580px;
 	height:100px;
@@ -104,7 +113,8 @@ h1 {
 	margin:5px;
 	margin-left:10px;
 	background-color:white;
-	font-family:Times New Roman;
+	font-family:Apple Chancery;
+	line-height:1.4em;
 	font-size:25px;
 	padding-top:30px;
 	width:580px;
@@ -116,8 +126,9 @@ h1 {
 	text-align:center;
 	margin:5px;
 	margin-left:10px;
-	background-color:blue;
-	font-family:Times New Roman;
+	color:#fbc612;
+	background-color:#84c38b;
+	font-family:Apple Chancery;
 	font-size:25px;
 	padding-top:20px;
 	width:580px;
@@ -129,20 +140,25 @@ h1 {
 	position:border-box;
 	text-align:center;
 	margin:5px;
+	margin-left:20px;
 	padding:20px;
-	margin-left:10px;
-	background-color:blue;
+	margin-left:15px;
+	color:#fbc612;
+	background-color:#3e4d61;
 	font-color:white;
-	font-family:Times New Roman;
+	font-family:Apple Chancery;
+	line-height:1.4em;
 	font-size:25px;
 	padding-top:20px;
-	width:540px;
+	width:535px;
 	height:250px;
 }
 
 #answer_box button{
 	
-	font-family:Times New Roman;
+	font-family:Apple Chancery;
+	color:#fbc612;
+	background-color:#3e4d61;
 	font-size:25px;
 	margin:5px;
 	width:400px;
@@ -155,7 +171,7 @@ h1 {
 	
 	margin-left:15px;
 	margin-bottom:25px;
-	margin-top:20px;
+	margin-top:0px;
 	width:500px;
 	height:300px;
 }
