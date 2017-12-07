@@ -5,7 +5,8 @@ h1 {
 }
 
 #header {
-	color:#fbc612;
+	color:#cf2b0f;
+	font-weight: bold;
 	margin-bottom:10px;
 
 }
@@ -69,9 +70,10 @@ h1 {
 	font-size:30px;
 	line-height:1.4em;
 	text-align: center;
-	color:#3e4d61;
+	color:#cf2b0f;
+	font-weight: bold;
 	background-color:#84c38b;
-	margin:20px 10px 20px 10px;
+	margin:0px 10px 20px 10px;
 	padding:10px;
 	padding-top:20px;
 	width:560px;
@@ -99,7 +101,8 @@ h1 {
 	text-align:center;
 	margin:5px;
 	margin-left:10px;
-	color:#3e4d61;
+	color:#cf2b0f;
+	font-weight: bold;
 	background-color:#84c38b;
 	font-family:Apple Chancery;
 	line-height:1.4em;
@@ -171,10 +174,17 @@ h1 {
 
 #gif_box {
 	
-
+	text-align:center;
 	margin-left:15px;
 	margin-bottom:25px;
 	margin-top:0px;
 	max-width:575px;
 	height:310px;
+}
+
+#gif_box img {
+
+	/*width:100%;*/
+	max-width:575px;
+	max-height:310px;
 }

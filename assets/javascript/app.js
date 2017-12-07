@@ -17,8 +17,47 @@ var gifs = [ "./assets/images/q1.gif", "./assets/images/q2.gif","./assets/images
 var start_game = function(){};
 var game_over = function() { 
 
-	alert("You answered" + correct + " questions correctly");
+			window.clearInterval(timer);
 
+			
+			$("#timer").hide();
+			$("#question_box").hide();
+			$("#answer_box").hide();
+
+			var score = "You answered" + correct + " out of 12 questions correctly!";
+				if( correct == 12) {
+
+				score += "Your knowledge of Vincent Van Googh is great!";
+
+				}
+
+				else if( correct >= 8) {
+
+				score += "Your knowledge of Vincent Van Gogh is above average!";
+		
+				}
+				else if( correct >= 4) {
+
+				score += "Your knowledge of Vincent Van Gogh is average!";
+		
+				}
+
+				else if( correct > 4) {
+
+				score += "Your knowledge of Vincent Van Gogh is below average!";
+		
+				}
+
+			$("#result_box").html(score);
+
+			$("#result_box").show();
+
+			$("#start_button").text("Click here to RESTART");
+
+			$("#start_button").show();
+			// $('#start_button').click(setup);
+
+			console.log(score);
 }
 
 	
@@ -70,15 +109,13 @@ var update = function() {
 				}, 8000);
 				incorrect++;
 	}
-		
-
-
+	
 
 }
 
 
 $(document).ready(function() {
-	$("#intro_pic").show();
+	$("#self").show();
 	$("#timer").hide();
 	$("#question_box").hide();
 	$("#answer_box").hide();
@@ -86,7 +123,10 @@ $(document).ready(function() {
 	$("#result_box").hide();
 
 	//when start button is clicked, start game
-	$('#start_button').click(function() {
+	$('#start_button').click( setup);
+})
+
+function setup() {
 		start_game();
 		var game_finished = false;
 		var correct_answers = 0;
@@ -98,9 +138,11 @@ $(document).ready(function() {
 
 		$('#question_box').html($('#question_1'));
 		$("#intro").hide();
+		$("#self").hide();
 		$("#start_button").hide();
 		$("#timer").show();
 		$("#question_box").show();
+		$("#result_box").hide();
 		$("#answer_box").show();
 		load_question();
 
@@ -151,7 +193,7 @@ $(document).ready(function() {
 					$("#question_box").show();
 					$("#answer_box").show();
 					load_question();
-				}, 8000);
+				}, 2000);
 			
 
 
@@ -163,7 +205,4 @@ $(document).ready(function() {
 		}
 
 
-	});
-})
-
-
+	}
