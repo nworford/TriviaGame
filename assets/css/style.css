@@ -59,7 +59,9 @@ h1 {
 }
 
 #intro_pic {
-	width:200px;
+
+	width:400px;
+	
 }
 
 #intro {
@@ -151,7 +153,7 @@ h1 {
 	font-size:25px;
 	padding-top:20px;
 	width:535px;
-	height:250px;
+	height:200px;
 }
 
 #answer_box button{
@@ -169,9 +171,10 @@ h1 {
 
 #gif_box {
 	
+
 	margin-left:15px;
 	margin-bottom:25px;
 	margin-top:0px;
-	width:500px;
-	height:300px;
+	max-width:575px;
+	height:310px;
 }
