@@ -66,13 +66,13 @@ function load_question() {
   	//start timer
   	timeLeft = 30;
   	$('#timer_sec').html(timeLeft);
-  	timer = window.setInterval(timerUpdate, 10000);
+  	timer = window.setInterval(timerUpdate, 1000);
 }
 function questionAnswered(){
     $("#gif_box").html("<img src='" + gifs[qNumber] + "'>");
 	//change view, then load next question after a pause
   	answerScreen();
-	setTimeout(load_question, 1000); //delay before going to the next question
+	setTimeout(load_question, 10000); //delay before going to the next question
   	//stop timer, if running
     window.clearInterval(timer);
   	//update
