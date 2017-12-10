@@ -66,7 +66,7 @@ function load_question() {
   	//start timer
   	timeLeft = 30;
   	$('#timer_sec').html(timeLeft);
-  	timer = window.setInterval(timerUpdate, 1000);
+  	timer = window.setInterval(timerUpdate, 10000);
 }
 function questionAnswered(){
     $("#gif_box").html("<img src='" + gifs[qNumber] + "'>");
