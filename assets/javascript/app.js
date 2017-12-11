@@ -72,7 +72,7 @@ function questionAnswered(){
     $("#gif_box").html("<img src='" + gifs[qNumber] + "'>");
 	//change view, then load next question after a pause
   	answerScreen();
-	setTimeout(load_question, 1000); //delay before going to the next question
+	setTimeout(load_question, 10000); //delay before going to the next question
   	//stop timer, if running
     window.clearInterval(timer);
   	//update
