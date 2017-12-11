@@ -83,8 +83,10 @@ function timerUpdate() {
 	$('#timer_sec').html(timeLeft);
 	if (timeLeft <= 0)
 	{
+		incorrect++;
       	$("#result_box").text("You RAN OUT OF TIME! " + interesting_fact[qNumber]);
       	questionAnswered();
+
     }
 }
 
