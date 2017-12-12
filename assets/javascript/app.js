@@ -150,7 +150,7 @@ function game_over() {
 
 	$("#gif_box").hide();
 	$("#starry_night").show();
-    var score = "You answered " + correct + " out of 12 questions correctly! ";
+    var score = "You answered " + correct + " questions correctly and " + incorrect + " questions incorrectly!";
     if( correct == 12) {
         score += "Your knowledge of the great Vincent Van Gogh is... A PERFECT MASTERPIECE!";
     }
