@@ -23,25 +23,16 @@ HIGHLIGHT CODE:
 
 This function called “timerUpdate” uses variable “timeLeft” which was previously declared and set to 30 seconds. It subtracts 1 from time remaining. If “timeLeft” is lesser than or equal to 0, it adds one to your “incorrect response count”, displays “You RAN OUT OF TIME!” on the page(as well as an interesting fact about Van Gogh), and calls the “questionAnswer” function, which triggers a GIF to be displayed.
 
-	function timerUpdate() {
-
+function timerUpdate() {
 	timeLeft = timeLeft - 1;
-
 	$('#timer_sec').html(timeLeft);
-
-	if (timeLeft <= 0)
-
-	{
-
+	if (timeLeft <= 0){
 		incorrect++;
+      		$("#result_box").text("You RAN OUT OF TIME! " + interesting_fact[qNumber]);
+      		questionAnswered();
 
-      	$("#result_box").text("You RAN OUT OF TIME! " + interesting_fact[qNumber]);
-
-      	questionAnswered();
-
-
-
-    }
+    	}
+}
 
 
 CONCLUSION: 
